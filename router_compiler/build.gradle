@@ -1,0 +1,15 @@
+apply plugin: 'java-library'
+
+dependencies {
+    implementation 'com.squareup:javapoet:1.10.0'
+    annotationProcessor 'com.google.auto.service:auto-service:1.0-rc5'
+    implementation 'com.google.auto.service:auto-service-annotations:1.0-rc5'
+    implementation project(path: ':router_annotations')
+}
+
+targetCompatibility = JavaVersion.VERSION_1_8
+sourceCompatibility = JavaVersion.VERSION_1_8
+
+tasks.withType(JavaCompile) {
+    options.encoding = "UTF-8"
+}
