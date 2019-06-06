@@ -16,7 +16,7 @@ open class Compont : Intercept {
     internal var buildParams: Boolean = true
     internal var typeCase: Boolean = true
     internal var intercept: Intercept? = null
-    internal var urls: Array<out String?>? = null
+    internal var urls: Array<out String?>? = null// Compont添加成功后urls会重新赋值为null
 
     constructor(clazz: Class<out Activity>?, vararg urls: String?) {
         this.targetClass = clazz

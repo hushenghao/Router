@@ -85,7 +85,7 @@ class RouterProcessor : AbstractProcessor() {
             .initializer("new \$T()", ArrayList::class.java)
             .build()
         val typeSpec = TypeSpec.classBuilder("Router_Inject")// 生成Router_Inject.java
-            .addModifiers(Modifier.PUBLIC)
+            .addModifiers(Modifier.PUBLIC, Modifier.FINAL)
             .addJavadoc("Generated code from Router. Do not modify!\n")
             .addField(fieldSpec)// 添加属性
             .addStaticBlock(staticCodeBuilder.build())// 添加静态代码块

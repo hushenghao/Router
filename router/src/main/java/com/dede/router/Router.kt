@@ -71,6 +71,10 @@ class Router private constructor(private val context: Context) {
         }
 
         fun addCompont(url: String, compont: Compont): RouterInit {
+            val c = routerMap[url]
+            if (c != null) {
+                Log.w(TAG, "addCompont: Router url repeated addition :$url")
+            }
             routerMap[url] = compont
             return this
         }
@@ -78,7 +82,7 @@ class Router private constructor(private val context: Context) {
         fun addCompont(compont: Compont): RouterInit {
             compont.urls?.forEach {
                 if (it.notNull()) {
-                    routerMap[it!!] = compont
+                    addCompont(it!!, compont)
                 }
             }
             compont.urls = null
@@ -97,6 +101,15 @@ class Router private constructor(private val context: Context) {
                 this.parser = parser
             }
             return this
+        }
+
+        /**
+         * 注入被注解声明的页面
+         */
+        fun inject() {
+            RouterInjectHelper.inject(this)
+
+            Log.i(TAG, "Router map size : " + routerMap.size)
         }
 
         internal fun find(url: String): Compont? {
@@ -132,14 +145,6 @@ class Router private constructor(private val context: Context) {
             }
         }
 
-        /**
-         * 注入被注解声明的页面
-         */
-        fun inject() {
-            RouterInjectHelper.inject(this)
-
-            Log.i(TAG, "Router map size : " + routerMap.size)
-        }
     }
 
     /** =========================================== */

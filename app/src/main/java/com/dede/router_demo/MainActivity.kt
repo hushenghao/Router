@@ -9,7 +9,7 @@ import com.dede.router.Router
 import com.dede.router.annotations.Route
 import kotlinx.android.synthetic.main.activity_main.*
 
-@Route(route = ["/main", "/home"])
+@Route(route = ["/main"])
 class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
