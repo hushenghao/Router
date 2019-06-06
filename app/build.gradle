@@ -32,7 +32,6 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 
     implementation project(path: ':router')
-    implementation project(path: ':router_annotations')
-    kapt project(':router_compiler')
-//    annotationProcessor project(':router_compiler')
+    kapt project(':router_compiler')// kotlin project
+//    annotationProcessor project(':router_compiler') // java project
 }

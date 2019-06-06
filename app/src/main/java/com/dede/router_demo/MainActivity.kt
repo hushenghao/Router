@@ -24,7 +24,7 @@ class MainActivity : AppCompatActivity() {
         Router.open(this)
             .url("/second?data=我是通过解析url得到的参数")
             .callback {
-                val result = it.getStringExtra("result") ?: ""
+                val result = it.getStringExtra("result_second") ?: ""
                 tv_data.text = result
             }
             .go()
@@ -33,7 +33,7 @@ class MainActivity : AppCompatActivity() {
     override fun finish() {
         setResult(
             Activity.RESULT_OK, Intent()
-                .putExtra("result", "这是Main返回的数据")
+                .putExtra("result_main", "这是Main返回的数据")
         )
         super.finish()
     }

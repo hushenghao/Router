@@ -25,7 +25,7 @@ class SecondActivity : AppCompatActivity() {
             Router.open(this)
                 .addParams("data", "我是从第二个页面传递的数据")
                 .callback {
-                    val result = it.getStringExtra("result") ?: ""
+                    val result = it.getStringExtra("result_main") ?: ""
                     tv_data.text = result
                 }
                 .go("/home")
@@ -35,7 +35,7 @@ class SecondActivity : AppCompatActivity() {
     override fun finish() {
         setResult(
             Activity.RESULT_OK, Intent()
-                .putExtra("result", "这是Second返回的数据！！")
+                .putExtra("result_second", "这是Second返回的数据！！")
         )
         super.finish()
     }
