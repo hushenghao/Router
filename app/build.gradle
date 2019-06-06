@@ -31,9 +31,9 @@ dependencies {
     androidTestImplementation 'androidx.test:runner:1.2.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 
-//    implementation 'com.che300:router:0.0.2'
+    implementation 'com.che300:router:0.0.2'
     implementation 'com.che300:router-annotations:0.0.1'
-    implementation project(path: ':router')
+//    implementation project(path: ':router')
     kapt project(':router_compiler')// kotlin project
 //    annotationProcessor project(':router_compiler') // java project
 }
