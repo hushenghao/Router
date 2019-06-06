@@ -26,7 +26,8 @@ android {
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation 'androidx.appcompat:appcompat:1.0.2'
-    api project(path: ':router_annotations')
+//    api project(path: ':router_annotations')
+    api 'com.che300:router-annotations:0.0.1'
     implementation 'com.gengqiquan:QQResult:0.0.5'
 }
 
@@ -34,7 +35,7 @@ publish {
     userOrg = 'adrianzuo'// bintray.com用户名
     groupId = 'com.che300'// jcenter上的路径
     artifactId = 'router'// 项目名称
-    publishVersion = '0.0.1'// 版本号
+    publishVersion = '0.0.2'// 版本号
     desc = 'Route for android project'
     website = 'https://github.com/hushenghao/Router'
 }
